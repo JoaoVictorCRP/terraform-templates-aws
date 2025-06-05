@@ -8,6 +8,13 @@ resource "aws_instance" "main_instance" {
   ]
   associate_public_ip_address = true
 
+  root_block_device {
+    volume_type = "gp3"
+    volume_size = var.ebs_volume_size
+    delete_on_termination = true
+    encrypted = true
+  }
+
   tags = {
     Name = var.app_name
   }

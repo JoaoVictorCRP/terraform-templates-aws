@@ -2,6 +2,10 @@ variable "app_name" {
   type = string
 }
 
+variable "ebs_volume_size" {
+  type    = number
+}
+
 variable "aws_region" {
   type    = string
   default = "us-east-1"
